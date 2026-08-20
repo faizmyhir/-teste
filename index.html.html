@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultoria Técnica & Gestão Industrial | Cosméticos</title>
+  <meta name="description" content="Assessoria técnica em chão de fábrica, BPF, licenças ANVISA, CETESB, IBAMA e suporte ao Responsável Técnico de indústrias cosméticas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0F172A;
+      --primary-accent: #0284C7;
+      --primary-accent-hover: #0369A1;
+      --secondary: #1E293B;
+      --surface: #F8FAFC;
+      --surface-card: #FFFFFF;
+      --text-main: #334155;
+      --text-muted: #64748B;
+      --text-light: #F8FAFC;
+      --border: #E2E8F0;
+      --border-focus: #38BDF8;
+      --whatsapp: #25D366;
+      --whatsapp-hover: #1EBE5D;
+      --radius: 8px;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      background-color: var(--surface);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-accent);
+      color: #FFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      background-color: #FFF;
+      border-color: var(--primary-accent);
+      color: var(--primary-accent);
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      background-color: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
+
+    .brand {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand span {
+      color: var(--primary-accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-main);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-accent);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 90px;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--surface) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: #E0F2FE;
+      color: #0369A1;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.85rem;
+      max-width: 850px;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Section Global */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      margin-bottom: 56px;
+      max-width: 680px;
+    }
+
+    .section-header .tag {
+      color: var(--primary-accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-size: 2.1rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    /* Problems Grid */
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background-color: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-focus);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      background-color: #F1F5F9;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--primary-accent);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Services Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background-color: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card .target {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .service-list {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .service-list li {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary-accent);
+      font-weight: 700;
+    }
+
+    /* About Section */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-size: 2.1rem;
+      margin-bottom: 24px;
+    }
+
+    .about-content p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .stats-box {
+      background-color: var(--secondary);
+      color: #FFF;
+      padding: 40px;
+      border-radius: var(--radius);
+    }
+
+    .stats-box h3 {
+      color: #FFF;
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+    }
+
+    .stat-item {
+      margin-bottom: 24px;
+      border-left: 3px solid var(--primary-accent);
+      padding-left: 16px;
+    }
+
+    .stat-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .stat-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #38BDF8;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #94A3B8;
+    }
+
+    /* Form Section */
+    .form-section {
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 44px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary-accent);
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .checkbox-label input {
+      width: auto;
+      margin-top: 3px;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--whatsapp);
+      color: #FFF;
+      padding: 12px 20px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      transition: all 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: #94A3B8;
+      padding: 48px 0 24px;
+      font-size: 0.85rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
+
+    .footer-brand {
+      color: #FFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.1rem; }
+      .about-wrap { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .form-wrapper { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrapper">
+      <div class="brand">
+        CONSULTORIA<span>COSMÉTICA</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#solucoes">Soluções</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Trajetória</a>
+        <a href="#diagnostico" class="btn btn-outline" style="padding: 8px 18px; font-size: 0.85rem;">Diagnóstico Inicial</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge">Assessoria & Gestão Industrial Fracionada</span>
+      <h1>Estruture a qualidade e a conformidade da sua fábrica sem o custo fixo de um gestor sênior.</h1>
+      <p>Mais de 10 anos de vivência em chão de fábrica. Orientamos seu Responsável Técnico, padronizamos rotinas de BPF e destravamos suas licenças na ANVISA, CETESB e IBAMA com ferramentas práticas.</p>
+      <div class="hero-actions">
+        <a href="#diagnostico" class="btn btn-primary">Solicitar Diagnóstico Operacional</a>
+        <!-- Substitua com o seu número com DDD -->
+        <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20entender%20como%20funciona%20a%20assessoria%20técnica%20para%20minha%20fábrica%20de%20cosméticos." target="_blank" class="btn btn-outline">Conversar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problems Solved -->
+  <section id="solucoes">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Gargalos Fabris</span>
+        <h2>A rotina industrial não aceita metodologias puramente teóricas.</h2>
+        <p>Desenvolvemos soluções para as quatro principais dores que travam a rotina de pequenas e médias fábricas de cosméticos.</p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-icon">01</div>
+          <h3>Insegurança Técnica</h3>
+          <p>O químico ou RT interno é sobrecarregado e precisa de respaldo técnico sênior para tomadas de decisão críticas.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">02</div>
+          <h3>Desperdício & Perdas</h3>
+          <p>Instabilidade em reatores, desvios na transposição de escala e perdas no envase que reduzem a margem de lucro.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">03</div>
+          <h3>Risco Regulatório</h3>
+          <p>Dúvidas em exigências sanitárias e ambientais que deixam a planta exposta a notificações, multas e interdições.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">04</div>
+          <h3>Custo de Contratação</h3>
+          <p>A necessidade de um gestor industrial experiente esbarra no orçamento da folha de pagamento da empresa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section id="servicos" style="background-color: #FFFFFF; border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Serviços Especializados</span>
+        <h2>Como atuamos na sua operação</h2>
+        <p>Planos customizados entre projetos pontuais e assessoria contínua mensal.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="service-card">
+          <div>
+            <span class="target">Desenvolvimento de Equipe</span>
+            <h3>Mentoria & Orientação ao RT Interno</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Suporte técnico direto para o químico ou analista tomar decisões seguras no dia a dia.</p>
+            <ul class="service-list">
+              <li>Acompanhamento e suporte em desvios de processo</li>
+              <li>Tratamento de Não Conformidades (RNC) e laudos</li>
+              <li>Validação de bancada e novas matérias-primas</li>
+              <li>Reuniões periódicas de alinhamento técnico</li>
+            </ul>
+          </div>
+          <a href="#diagnostico" class="btn btn-outline btn-block">Avaliar Minha Equipe</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <span class="target">Padronização Fabril</span>
+            <h3>Implantação de BPF & Metodologias</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Processos que funcionam no chão de fábrica e são seguidos pelos operadores.</p>
+            <ul class="service-list">
+              <li>Mapeamento de fluxo e controle de contaminação</li>
+              <li>POPs objetivos e fichas de processo claras</li>
+              <li>Rotinas de sanitização, limpeza de reatores e CIP</li>
+              <li>Capacitação do time operacional na linha de envase</li>
+            </ul>
+          </div>
+          <a href="#diagnostico" class="btn btn-outline btn-block">Padronizar Fábrica</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <span class="target">Conformidade Sanitária</span>
+            <h3>Assuntos Regulatórios (ANVISA)</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Segurança técnica e jurídica para o funcionamento da planta e lançamento de itens.</p>
+            <ul class="service-list">
+              <li>Obtenção e renovação de AFE e Licença Sanitária Local</li>
+              <li>Auditoria preventiva de rotulagem (INCI e alegações)</li>
+              <li>Dossiês para Notificação Grau 1 e Registro Grau 2</li>
+              <li>Cumprimento e resposta técnica a exigências fiscais</li>
+            </ul>
+          </div>
+          <a href="#diagnostico" class="btn btn-outline btn-block">Regularizar Produtos</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <span class="target">Engenharia & Escala</span>
+            <h3>Transposição de Escala & Licenças Ambientais</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Viabilidade técnica do reator e conformidade com órgãos de meio ambiente.</p>
+            <ul class="service-list">
+              <li>Ajustes de processo térmico e agitação em scale-up</li>
+              <li>Solução de problemas de estabilidade e separação de fases</li>
+              <li>Licenciamento ambiental (CETESB - LP, LI e LO)</li>
+              <li>Regularização no SisGen/IBAMA para insumos naturais</li>
+            </ul>
+          </div>
+          <a href="#diagnostico" class="btn btn-outline btn-block">Otimizar Escala</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Trajectory -->
+  <section id="sobre">
+    <div class="container">
+      <div class="about-wrap">
+        <div class="about-content">
+          <span class="tag" style="color: var(--primary-accent); font-weight:700; text-transform:uppercase; font-size:0.85rem;">Vivência de Fábrica</span>
+          <h2>A experiência real de chão de fábrica a serviço da sua empresa.</h2>
+          <p>A indústria cosmética não funciona apenas na teoria dos manuais. Ela acontece no reator, na linha de envase, no controle rigoroso de cada lote e na pressão constante por conformidade com órgãos fiscalizadores.</p>
+          <p>Com mais de 10 anos de atuação direta na gestão industrial e química de fábricas de cosméticos, estruturei esta consultoria com uma premissa clara: <strong>pequenas e médias indústrias precisam de metodologias simples, acessíveis e desenhadas para o maquinário que elas já possuem.</strong></p>
+        </div>
+
+        <div class="stats-box">
+          <h3>Autoridade Comprovada</h3>
+          <div class="stat-item">
+            <span class="stat-number">+10 Anos</span>
+            <span class="stat-label">Liderando chão de fábrica e processos industriais</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100% Prático</span>
+            <span class="stat-label">POPs e metodologias adaptados à rotina da sua equipe</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Sob Demanda</span>
+            <span class="stat-label">Expertise sênior compatível com o fluxo de caixa da empresa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diagnostic Form Section -->
+  <section id="diagnostico" class="form-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin: 0 auto 40px;">
+        <span class="tag">Primeiro Passo</span>
+        <h2>Solicite uma Avaliação Diagnóstica da Sua Fábrica</h2>
+        <p>Preencha os dados abaixo para avaliarmos as necessidades da sua planta e prepararmos uma devolutiva técnica.</p>
+      </div>
+
+      <div class="form-wrapper">
+        <form id="leadForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome Completo *</label>
+              <input type="text" id="nome" required placeholder="Seu nome">
+            </div>
+            <div class="form-group">
+              <label for="cargo">Cargo / Função *</label>
+              <select id="cargo" required>
+                <option value="" disabled selected>Selecione seu cargo</option>
+                <option value="Proprietário / Diretor">Proprietário / Diretor</option>
+                <option value="Gerente Industrial">Gerente Industrial</option>
+                <option value="Responsável Técnico (RT)">Responsável Técnico (RT)</option>
+                <option value="Garantia / Controle de Qualidade">Garantia / Controle de Qualidade</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="empresa">Nome da Empresa / Fábrica *</label>
+              <input type="text" id="empresa" required placeholder="Nome da sua fábrica">
+            </div>
+            <div class="form-group">
+              <label for="localizacao">Cidade / Estado *</label>
+              <input type="text" id="localizacao" required placeholder="Ex: Indaiatuba / SP">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="equipe">Tamanho da Equipe Operacional *</label>
+              <select id="equipe" required>
+                <option value="" disabled selected>Número de colaboradores</option>
+                <option value="Até 5 colaboradores">Até 5 colaboradores</option>
+                <option value="6 a 15 colaboradores">6 a 15 colaboradores</option>
+                <option value="16 a 50 colaboradores">16 a 50 colaboradores</option>
+                <option value="Mais de 50 colaboradores">Mais de 50 colaboradores</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="rt_status">Situação do Responsável Técnico (RT) *</label>
+              <select id="rt_status" required>
+                <option value="" disabled selected>Selecione a situação</option>
+                <option value="Temos RT interno que precisa de mentoria">Temos RT interno que precisa de mentoria</option>
+                <option value="Buscamos assessoria para estruturar rotinas">Buscamos assessoria para estruturar rotinas</option>
+                <option value="Operamos sem suporte sênior no momento">Operamos sem suporte sênior no momento</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Qual é a prioridade imediata da sua fábrica? (Selecione até 2)</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="gargalo" value="BPF e POPs">
+                Implantação/revisão de BPF, POPs e controle de qualidade
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="gargalo" value="Licenças Sanitárias/AFE">
+                Adequação ou renovação de licenças sanitárias e AFE (ANVISA)
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="gargalo" value="Licenciamento Ambiental">
+                Licenciamento ambiental e resíduos (CETESB / IBAMA)
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="gargalo" value="Escala e Perdas">
+                Transposição de escala / Perdas e instabilidade em reator
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="gargalo" value="Mentoria RT">
+                Mentoria contínua para o químico/analista interno
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mail Corporativo *</label>
+              <input type="email" id="email" required placeholder="seuemail@empresa.com.br">
+            </div>
+            <div class="form-group">
+              <label for="whatsapp">WhatsApp com DDD *</label>
+              <input type="tel" id="whatsapp" required placeholder="(00) 00000-0000">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="observacoes">Conte resumidamente o principal desafio atual (opcional)</label>
+            <textarea id="observacoes" rows="3" placeholder="Ex: Estamos com dificuldades de estabilidade em um lote de emulsão e precisamos renovar a licença da CETESB..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" style="font-size: 1rem; padding: 16px;">
+            Enviar Dados para Avaliação Técnica
+          </button>
+        </form>
+
+        <div id="successMessage" style="display: none; text-align: center; padding: 24px 0;">
+          <h3 style="color: var(--primary-accent); margin-bottom: 12px;">Diagnóstico Recebido com Sucesso!</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Analisaremos os dados da sua fábrica e entraremos em contato em até 24h úteis.</p>
+          <!-- Substitua com o seu número com DDD -->
+          <a href="https://wa.me/5500000000000?text=Olá!%20Acabei%20de%20enviar%20o%20formulário%20pelo%20site%20e%20gostaria%20de%20conversar." target="_blank" class="btn btn-primary">
+            Iniciar Conversa no WhatsApp Agora
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <!-- Substitua com o seu número com DDD -->
+  <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20entender%20como%20funciona%20a%20assessoria%20técnica%20para%20minha%20fábrica%20de%20cosméticos." target="_blank" class="whatsapp-float" aria-label="Contato via WhatsApp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    <span>Falar no WhatsApp</span>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-wrap">
+        <div class="footer-brand">CONSULTORIA TÉCNICA COSMÉTICA</div>
+        <div>Assessoria Operacional & Regulatória | ANVISA • CETESB • IBAMA</div>
+      </div>
+      <p style="text-align: center; color: #64748B;">&copy; 2026 Todos os direitos reservados. Serviços técnicos e suporte a indústrias cosméticas.</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      
+      const form = document.getElementById('leadForm');
+      const success = document.getElementById('successMessage');
+
+      // Opcional: Integrar com Formspree, Google Sheets ou CRM aqui via fetch()
+      
+      form.style.display = 'none';
+      success.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
